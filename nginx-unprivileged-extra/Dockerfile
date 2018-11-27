@@ -45,12 +45,12 @@ COPY modules-conf.d /etc/nginx/modules-conf.d
 COPY global-conf.d /etc/nginx/global-conf.d
 COPY rtmp-conf.d /etc/nginx/rtmp-conf.d
 COPY testloop /usr/share/nginx/rtmp/testloop
-ADD https://www.sample-videos.com/video/mp4/480/big_buck_bunny_480p_1mb.mp4 /usr/share/nginx/rtmp/testloop/
+ADD http://techslides.com/demos/sample-videos/small.mp4 /usr/share/nginx/rtmp/testloop/
 COPY run.sh .
 RUN mkdir -p /data/video && \
     chown nginx:nginx /data/video && \
     chmod 0750 /data/video && \
-    chmod 0644 /usr/share/nginx/rtmp/testloop/big_buck_bunny_480p_1mb.mp4
+    chmod 0644 /usr/share/nginx/rtmp/testloop/small.mp4
 
 EXPOSE 9108
 EXPOSE 1935
