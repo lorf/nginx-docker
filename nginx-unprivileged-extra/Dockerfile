@@ -39,6 +39,7 @@ COPY --from=build \
     /usr/lib/nginx/modules/
 COPY --from=build /usr/src/nginx-rtmp-module/stat.xsl /usr/share/nginx/rtmp/
 COPY --from=build /usr/src/nginx-rtmp-module/test /usr/share/nginx/rtmp/test
+COPY --from=build /usr/src/nginx-vod-module/static /usr/share/nginx/vod-html
 COPY rtmp.conf /etc/nginx/
 COPY conf.d /etc/nginx/conf.d
 COPY modules-conf.d /etc/nginx/modules-conf.d
