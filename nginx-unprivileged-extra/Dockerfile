@@ -38,6 +38,7 @@ COPY --from=build \
     /usr/src/nginx/objs/ngx_http_vhost_traffic_status_module.so \
     /usr/src/nginx/objs/ngx_rtmp_module.so \
     /usr/src/nginx/objs/ngx_http_vod_module.so \
+    /usr/src/nginx/objs/ngx_http_aws_auth_module.so \
     /usr/lib/nginx/modules/
 COPY --from=build /usr/src/nginx-rtmp-module/stat.xsl /usr/share/nginx/rtmp/
 COPY --from=build /usr/src/nginx-rtmp-module/test /usr/share/nginx/rtmp/test
