@@ -11,11 +11,13 @@ RUN set -x && \
     git clone --depth 1 https://github.com/vozlt/nginx-module-vts && \
     git clone --depth 1 https://github.com/arut/nginx-rtmp-module && \
     git clone --depth 1 https://github.com/kaltura/nginx-vod-module && \
+    git clone -b AuthV2 --depth 1 https://github.com/anomalizer/ngx_aws_auth && \
     cd /usr/src/nginx && \
     ./configure --with-compat \
         --add-dynamic-module=../nginx-module-vts \
         --add-dynamic-module=../nginx-rtmp-module \
-        --add-dynamic-module=../nginx-vod-module --with-file-aio --with-threads --with-cc-opt="-O3" && \
+        --add-dynamic-module=../nginx-vod-module --with-file-aio --with-threads --with-cc-opt="-O3" \
+        --add-dynamic-module=../ngx_aws_auth && \
     make modules
 
 FROM nginxinc/nginx-unprivileged:stable
