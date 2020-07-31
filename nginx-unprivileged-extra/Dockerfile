@@ -22,7 +22,7 @@ RUN set -x && \
         --add-dynamic-module=../nginx-vod-module --with-file-aio --with-threads --with-cc-opt="-O3" \
         --add-dynamic-module=../ngx_aws_auth \
         # Workaround https://github.com/arut/nginx-rtmp-module/issues/1520
-        --with-cc-opt="-Wimplicit-fallthrough=0" && '
+        --with-cc-opt="-Wimplicit-fallthrough=0" && \
     make modules
 
 FROM nginxinc/nginx-unprivileged:stable
